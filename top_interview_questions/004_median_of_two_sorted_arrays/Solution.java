@@ -61,6 +61,13 @@ class Solution {
         while (true) {
             int midIdx2 = totalLen / 2 - midIdx1 - 2;  // totalLen / 2 - (midIdx1 + 1) - 1
 
+            /**
+             * コーナーケース
+             * 1. len1 = 0, len2 = 1 -> midIdx1 = -1, midIdx2 = -1
+             * 2. len1 = 1, len2 = 1 -> midIdx1 = 0, midIdx2 = -1
+             * 3. len1 = 1, len2 = 2 -> midIdx1 = 0, midIdx2 = -1
+             */
+            
             int midLeft1 = midIdx1 >= 0 ? nums1[midIdx1] : min;
             int midRight1 = midIdx1 + 1 < len1 ? nums1[midIdx1 + 1] : max;
             int midLeft2 = midIdx2 >= 0 ? nums2[midIdx2] : min;
